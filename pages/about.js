@@ -1,15 +1,21 @@
 import React from 'react'
 import styled from 'styled-components';
 import Button from '@material-ui/core/Button';
+import {auth,db} from '../firebase';
 
 function About() {
+  const handleFillData = () =>{
+
+  }
+
+  const handleSignOut = () =>{
+    auth.signOut();
+  }
+
   return (
     <Container>
-      <StyledButton size='large' color='primary' variant='outlined'>Sign In</StyledButton>
-      <StyledButton size='large' color='secondary' variant='outlined'>Sign Out</StyledButton>
-      <StyledButton size='large' color='secondary' variant='outlined'>Quit</StyledButton>
-      <StyledButton size='large' color='secondary' variant='outlined'>Quit</StyledButton>
-      <StyledButton size='large' color='secondary' variant='outlined'>Quit</StyledButton>
+      <StyledButton onClick={handleFillData} size='large' color='primary' variant='outlined'>Fill Data</StyledButton>
+      <StyledButton onClick={handleSignOut} size='large' color='secondary' variant='outlined'>Sign Out</StyledButton>
     </Container>
   )
 }
